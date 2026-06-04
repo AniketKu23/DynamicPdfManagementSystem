@@ -1,0 +1,17 @@
+{
+  "templateId": "theme-report-operations",
+  "isDefault": true,
+  "primaryColor": "#7f1d1d",
+  "secondaryColor": "#ef4444",
+  "headerFont": "Open Sans",
+  "bodyFont": "Open Sans",
+  "footerFont": "Arial",
+  "headerSize": 25,
+  "bodySize": 14,
+  "footerSize": 12,
+  "headerBold": true,
+  "bodyBold": false,
+  "footerBold": false,
+  "alignment": "center",
+  "logo": ""
+}

@@ -1,0 +1,17 @@
+{
+  "templateId": "theme-quotation-creative",
+  "isDefault": true,
+  "primaryColor": "#db2777",
+  "secondaryColor": "#8b5cf6",
+  "headerFont": "Roboto",
+  "bodyFont": "Open Sans",
+  "footerFont": "Open Sans",
+  "headerSize": 27,
+  "bodySize": 14,
+  "footerSize": 12,
+  "headerBold": true,
+  "bodyBold": false,
+  "footerBold": false,
+  "alignment": "right",
+  "logo": ""
+}

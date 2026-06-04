@@ -1,0 +1,17 @@
+{
+  "templateId": "theme-voucher-luxury",
+  "isDefault": true,
+  "primaryColor": "#4c1d95",
+  "secondaryColor": "#c084fc",
+  "headerFont": "Times New Roman",
+  "bodyFont": "Open Sans",
+  "footerFont": "Times New Roman",
+  "headerSize": 28,
+  "bodySize": 14,
+  "footerSize": 12,
+  "headerBold": true,
+  "bodyBold": false,
+  "footerBold": false,
+  "alignment": "center",
+  "logo": ""
+}

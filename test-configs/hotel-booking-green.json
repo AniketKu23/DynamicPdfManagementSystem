@@ -1,0 +1,17 @@
+{
+  "templateId": "theme-booking-hotel",
+  "isDefault": true,
+  "primaryColor": "#0f766e",
+  "secondaryColor": "#2dd4bf",
+  "headerFont": "Roboto",
+  "bodyFont": "Open Sans",
+  "footerFont": "Open Sans",
+  "headerSize": 25,
+  "bodySize": 14,
+  "footerSize": 12,
+  "headerBold": true,
+  "bodyBold": false,
+  "footerBold": false,
+  "alignment": "center",
+  "logo": ""
+}
