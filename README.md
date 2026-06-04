@@ -73,9 +73,9 @@ When these values exist, uploads are sent to Cloudinary and the returned secure 
 Use `backend/render.yaml` or create a Web Service manually:
 
 - Root directory: `backend`
-- Build command: `npm install && npm run build`
+- Build command: `npm install --include=dev && npm run build`
 - Start command: `npm start`
-- Required env vars: `NODE_ENV=production`, `MONGODB_URI`, `FRONTEND_URL`, `FRONTEND_URLS`
+- Required env vars: `NODE_ENV=production`, `NPM_CONFIG_PRODUCTION=false`, `MONGODB_URI`, `FRONTEND_URL`, `FRONTEND_URLS`
 - Optional env vars: Cloudinary credentials
 
 ### Frontend on Vercel
