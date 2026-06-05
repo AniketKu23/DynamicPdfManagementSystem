@@ -1,8 +1,27 @@
 import axios from "axios";
 import { ApiResponse, PdfRequest, Template, TemplateConfiguration } from "../types";
 
+const getApiBaseUrl = () => {
+  const configuredUrl = import.meta.env.VITE_API_URL ?? "http://localhost:5000/api";
+
+  if (typeof window !== "undefined") {
+    try {
+      const apiUrl = new URL(configuredUrl, window.location.origin);
+      if (apiUrl.origin === window.location.origin) {
+        console.error(
+          "VITE_API_URL points to the frontend domain. Set it to the Render backend URL, for example https://your-service.onrender.com/api"
+        );
+      }
+    } catch {
+      console.error("VITE_API_URL is not a valid URL", configuredUrl);
+    }
+  }
+
+  return configuredUrl;
+};
+
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ?? "http://localhost:5000/api",
+  baseURL: getApiBaseUrl(),
   timeout: 60000
 });
 
