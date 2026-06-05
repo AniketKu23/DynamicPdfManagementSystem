@@ -4,12 +4,16 @@ services:
     env: node
     rootDir: backend
     plan: starter
-    buildCommand: npm install --include=dev && npm run build
+    buildCommand: npm install --include=dev && npx puppeteer browsers install chrome && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
       - key: NPM_CONFIG_PRODUCTION
+        value: "false"
+      - key: PUPPETEER_CACHE_DIR
+        value: ./.cache/puppeteer
+      - key: ALLOW_ALL_ORIGINS
         value: "false"
       - key: MONGODB_URI
         sync: false

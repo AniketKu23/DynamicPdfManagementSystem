@@ -2,7 +2,7 @@
 cmds = ["npm install --include=dev"]
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ["npx puppeteer browsers install chrome", "npm run build"]
 
 [start]
 cmd = "npm start"

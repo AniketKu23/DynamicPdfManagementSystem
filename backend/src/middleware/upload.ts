@@ -1,9 +1,13 @@
 import path from "path";
+import fs from "fs";
 import multer from "multer";
 import { ApiError } from "../utils/ApiError";
 
 const storage = multer.diskStorage({
-  destination: "uploads",
+  destination: (_req, _file, cb) => {
+    fs.mkdirSync("uploads", { recursive: true });
+    cb(null, "uploads");
+  },
   filename: (_req, file, cb) => {
     const extension = path.extname(file.originalname).toLowerCase();
     cb(null, `logo-${Date.now()}${extension}`);

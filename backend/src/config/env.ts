@@ -11,6 +11,7 @@ export const env = {
     .split(",")
     .map((url) => url.trim())
     .filter(Boolean),
+  allowAllOrigins: process.env.ALLOW_ALL_ORIGINS === "true",
   cloudinary: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME ?? "",
     apiKey: process.env.CLOUDINARY_API_KEY ?? "",

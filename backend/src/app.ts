@@ -17,10 +17,17 @@ import uploadRoutes from "./routes/uploadRoutes";
 export const createApp = () => {
   const app = express();
 
+  app.set("trust proxy", 1);
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(
     cors({
-      origin: env.frontendUrls,
+      origin: (origin, callback) => {
+        if (!origin || env.allowAllOrigins || env.frontendUrls.includes(origin)) {
+          callback(null, true);
+          return;
+        }
+        callback(null, false);
+      },
       credentials: true
     })
   );
