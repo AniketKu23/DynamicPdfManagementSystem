@@ -51,6 +51,7 @@ export const DocumentMasterPage = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const importInputRef = useRef<HTMLInputElement>(null);
+  const hasHydratedConfiguration = useRef(false);
   const queryClient = useQueryClient();
 
   const selectedTemplate = useTemplateStore((state) => state.selectedTemplate);
@@ -87,7 +88,7 @@ export const DocumentMasterPage = () => {
   useEffect(() => {
     const apiConfig = configurationQuery.data;
     const templates = templatesQuery.data ?? [];
-    if (!apiConfig) return;
+    if (!apiConfig || hasHydratedConfiguration.current) return;
 
     const templateId = getTemplateId(apiConfig);
     setConfiguration({ ...apiConfig, templateId });
@@ -95,6 +96,7 @@ export const DocumentMasterPage = () => {
     if (matchingTemplate && !selectedTemplate) {
       setSelectedTemplate(matchingTemplate);
     }
+    hasHydratedConfiguration.current = true;
   }, [configurationQuery.data, selectedTemplate, setConfiguration, setSelectedTemplate, templatesQuery.data]);
 
   const fallbackTemplates = useMemo(() => getFallbackThemes(search, category), [search, category]);
