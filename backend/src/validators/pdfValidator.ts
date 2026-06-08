@@ -22,7 +22,7 @@ const pdfConfigurationSchema = z.object({
 
 export const pdfRequestSchema = z.object({
   body: z.object({
-    documentType: z.enum(["invoice", "voucher", "booking", "quotation", "report"]),
+    documentType: z.enum(["taxInvoice", "proformaInvoice", "cancelledInvoice", "quotation", "serviceVoucher"]),
     data: z.record(z.unknown()).default({}),
     configuration: pdfConfigurationSchema.optional(),
     templateName: z.string().min(1).max(120).optional()

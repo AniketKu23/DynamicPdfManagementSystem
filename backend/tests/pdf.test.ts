@@ -20,12 +20,12 @@ describe("PDF APIs", () => {
     await createTemplateFixture();
 
     const res = await request(app).post("/api/pdf/preview").send({
-      documentType: "invoice",
+      documentType: "taxInvoice",
       data: { invoiceNumber: "INV001", customerName: "John Doe", amount: 1500 }
     });
 
     expect(res.status).toBe(200);
-    expect(res.text).toContain("Corporate Invoice");
+    expect(res.text).toContain("Tax Invoice");
     expect(res.text).toContain("John Doe");
   });
 
@@ -33,7 +33,7 @@ describe("PDF APIs", () => {
     await createTemplateFixture();
 
     const res = await request(app).post("/api/pdf/generate").send({
-      documentType: "invoice",
+      documentType: "taxInvoice",
       data: { invoiceNumber: "INV001" }
     });
 

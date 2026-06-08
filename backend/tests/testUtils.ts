@@ -6,7 +6,7 @@ export const createTemplateFixture = async () => {
     name: "Corporate Invoice",
     thumbnail: "data:image/svg+xml,test",
     description: "Enterprise-ready invoice layout.",
-    category: "invoice",
+    category: "taxInvoice",
     isActive: true
   });
 

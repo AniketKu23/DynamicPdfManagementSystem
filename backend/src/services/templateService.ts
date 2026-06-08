@@ -33,7 +33,8 @@ export const saveConfiguration = async (payload: Record<string, unknown>) => {
   if (!template) throw new ApiError(404, "Template not found");
 
   if (payload.isDefault) {
-    await TemplateConfiguration.updateMany({}, { $set: { isDefault: false } });
+    const templateIdsInCategory = await Template.find({ category: template.category }).distinct('_id');
+    await TemplateConfiguration.updateMany({ templateId: { $in: templateIdsInCategory } }, { $set: { isDefault: false } });
   }
 
   const configuration = await TemplateConfiguration.findOneAndUpdate(

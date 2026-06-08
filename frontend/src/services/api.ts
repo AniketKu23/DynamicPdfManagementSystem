@@ -34,6 +34,10 @@ export const templateApi = {
     const { data } = await api.get<ApiResponse<TemplateConfiguration>>("/templates/configuration");
     return data.data;
   },
+  getConfigurationByTemplate: async (templateId: string) => {
+    const { data } = await api.get<ApiResponse<TemplateConfiguration | null>>(`/templates/${templateId}/configuration`);
+    return data.data;
+  },
   saveConfiguration: async (payload: TemplateConfiguration) => {
     const templateId = typeof payload.templateId === "string" ? payload.templateId : payload.templateId._id;
     const { data } = await api.post<ApiResponse<TemplateConfiguration>>("/templates/save", {

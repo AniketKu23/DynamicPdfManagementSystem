@@ -12,7 +12,7 @@ describe("Template APIs", () => {
       name: "Modern Invoice",
       thumbnail: "data:image/svg+xml,test",
       description: "A clean invoice layout.",
-      category: "invoice"
+      category: "taxInvoice"
     });
 
     expect(createRes.status).toBe(201);
@@ -45,7 +45,7 @@ describe("Configuration APIs", () => {
       name: "Travel Voucher",
       thumbnail: "data:image/svg+xml,test",
       description: "Travel voucher.",
-      category: "voucher"
+      category: "serviceVoucher"
     });
 
     const res = await request(app).post("/api/templates/save").send({

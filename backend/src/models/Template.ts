@@ -8,7 +8,7 @@ const templateSchema = new Schema(
     category: {
       type: String,
       required: true,
-      enum: ["invoice", "voucher", "booking", "quotation", "report"]
+      enum: ["taxInvoice", "proformaInvoice", "cancelledInvoice", "quotation", "serviceVoucher"]
     },
     isActive: { type: Boolean, default: true },
     theme: {

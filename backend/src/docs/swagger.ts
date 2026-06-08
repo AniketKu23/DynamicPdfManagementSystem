@@ -17,8 +17,8 @@ export const swaggerSpec = swaggerJSDoc({
             _id: { type: "string", example: "665f4b9b51c2d6a930e44211" },
             name: { type: "string", example: "Corporate Invoice" },
             thumbnail: { type: "string", example: "/templates/corporate.svg" },
-            description: { type: "string", example: "A polished invoice layout for enterprise billing." },
-            category: { type: "string", example: "invoice" },
+            description: { type: "string", example: "A polished tax invoice layout for GST billing." },
+            category: { type: "string", example: "taxInvoice" },
             isActive: { type: "boolean", example: true }
           }
         },
@@ -46,10 +46,10 @@ export const swaggerSpec = swaggerJSDoc({
           type: "object",
           required: ["documentType", "data"],
           properties: {
-            documentType: { type: "string", enum: ["invoice", "voucher", "booking", "quotation", "report"] },
+            documentType: { type: "string", enum: ["taxInvoice", "proformaInvoice", "cancelledInvoice", "quotation", "serviceVoucher"] },
             data: {
               type: "object",
-              example: { invoiceNumber: "INV001", customerName: "John Doe", amount: 1500 }
+              example: { invoiceNumber: "INV0002", customerName: "Mr. Anurag Singh Chauhan", total: "921322.50" }
             }
           }
         },

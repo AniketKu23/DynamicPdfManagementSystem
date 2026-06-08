@@ -87,8 +87,8 @@ export const DocumentMasterPage = () => {
 
   useEffect(() => {
     const apiConfig = configurationQuery.data;
-    const templates = templatesQuery.data ?? [];
-    if (!apiConfig || hasHydratedConfiguration.current) return;
+    const templates = templatesQuery.data;
+    if (!apiConfig || !templates || hasHydratedConfiguration.current) return;
 
     const templateId = getTemplateId(apiConfig);
     setConfiguration({ ...apiConfig, templateId });
@@ -118,6 +118,23 @@ export const DocumentMasterPage = () => {
       if (matchingThemes[0]) {
         setSelectedTemplate(matchingThemes[0]);
       }
+    }
+  };
+
+  const handleSelectTemplate = async (template: Template) => {
+    setSelectedTemplate(template);
+    const baseConfiguration = { ...template.theme, templateId: template._id, isDefault: true };
+
+    if (!isMongoObjectId(template._id)) {
+      setConfiguration(baseConfiguration);
+      return;
+    }
+
+    try {
+      const saved = await templateApi.getConfigurationByTemplate(template._id);
+      setConfiguration(saved ? { ...saved, templateId: getTemplateId(saved) } : baseConfiguration);
+    } catch {
+      setConfiguration(baseConfiguration);
     }
   };
 
@@ -189,10 +206,7 @@ export const DocumentMasterPage = () => {
               onCategory={handleCategoryChange}
               onReorder={handleReorder}
               onSearch={setSearch}
-              onSelect={(template: Template) => {
-                setSelectedTemplate(template);
-                setConfiguration({ ...template.theme, templateId: template._id, isDefault: true });
-              }}
+              onSelect={handleSelectTemplate}
               search={search}
               selectedId={selectedTemplate?._id}
               templates={templates}

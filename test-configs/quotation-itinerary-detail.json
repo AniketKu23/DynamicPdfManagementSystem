@@ -1,17 +1,17 @@
 {
-  "templateId": "theme-quotation-creative",
+  "templateId": "template-quotation-itinerary",
   "isDefault": true,
-  "primaryColor": "#db2777",
-  "secondaryColor": "#8b5cf6",
+  "primaryColor": "#1e3a8a",
+  "secondaryColor": "#f97316",
   "headerFont": "Roboto",
-  "bodyFont": "Open Sans",
+  "bodyFont": "Arial",
   "footerFont": "Open Sans",
-  "headerSize": 27,
+  "headerSize": 26,
   "bodySize": 14,
   "footerSize": 12,
   "headerBold": true,
   "bodyBold": false,
   "footerBold": false,
-  "alignment": "right",
+  "alignment": "left",
   "logo": ""
 }

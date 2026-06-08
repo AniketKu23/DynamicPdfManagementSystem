@@ -39,8 +39,8 @@ export const useTemplateStore = create<TemplateState>()(
     (set, get) => ({
       selectedTemplate: null,
       configuration: defaultConfiguration,
-      previewCategory: "invoice",
-      previewData: sampleDataByCategory.invoice,
+      previewCategory: "taxInvoice",
+      previewData: sampleDataByCategory.taxInvoice,
       darkMode: false,
       setSelectedTemplate: (template) =>
         set((state) => ({

@@ -4,7 +4,7 @@ const objectId = z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid MongoDB ObjectId
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/, "Use a hex color like #0d6efd");
 const font = z.enum(["Arial", "Roboto", "Times New Roman", "Open Sans"]);
 const alignment = z.enum(["left", "center", "right"]);
-const category = z.enum(["invoice", "voucher", "booking", "quotation", "report"]);
+const category = z.enum(["taxInvoice", "proformaInvoice", "cancelledInvoice", "quotation", "serviceVoucher"]);
 
 const templateTheme = z
   .object({

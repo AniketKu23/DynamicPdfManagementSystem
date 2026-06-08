@@ -58,6 +58,11 @@ export const getConfiguration = asyncHandler(async (_req: Request, res: Response
   sendSuccess(res, configuration);
 });
 
+export const getConfigurationByTemplate = asyncHandler(async (req: Request, res: Response) => {
+  const configuration = await TemplateConfiguration.findOne({ templateId: req.params.id }).populate("templateId");
+  sendSuccess(res, configuration);
+});
+
 export const exportTemplateConfiguration = asyncHandler(async (_req: Request, res: Response) => {
   const configuration = await exportConfiguration();
   res.setHeader("Content-Type", "application/json");

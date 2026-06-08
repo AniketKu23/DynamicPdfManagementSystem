@@ -1,17 +1,17 @@
 {
-  "templateId": "theme-booking-hotel",
+  "templateId": "template-taxInvoice-classic",
   "isDefault": true,
-  "primaryColor": "#0f766e",
-  "secondaryColor": "#2dd4bf",
+  "primaryColor": "#0f172a",
+  "secondaryColor": "#2563eb",
   "headerFont": "Roboto",
-  "bodyFont": "Open Sans",
+  "bodyFont": "Arial",
   "footerFont": "Open Sans",
-  "headerSize": 25,
+  "headerSize": 24,
   "bodySize": 14,
   "footerSize": 12,
   "headerBold": true,
   "bodyBold": false,
   "footerBold": false,
-  "alignment": "center",
+  "alignment": "left",
   "logo": ""
 }

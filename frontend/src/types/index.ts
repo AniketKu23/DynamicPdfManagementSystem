@@ -1,4 +1,9 @@
-export type DocumentCategory = "invoice" | "voucher" | "booking" | "quotation" | "report";
+export type DocumentCategory =
+  | "taxInvoice"
+  | "proformaInvoice"
+  | "cancelledInvoice"
+  | "quotation"
+  | "serviceVoucher";
 export type FontFamily = "Arial" | "Roboto" | "Times New Roman" | "Open Sans";
 export type Alignment = "left" | "center" | "right";
 

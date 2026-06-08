@@ -4,6 +4,7 @@ import {
   deleteTemplate,
   exportTemplateConfiguration,
   getConfiguration,
+  getConfigurationByTemplate,
   getDefaultTemplate,
   getTemplateById,
   getTemplates,
@@ -27,6 +28,7 @@ const router = Router();
 router.get("/", getTemplates);
 router.get("/default", getDefaultTemplate);
 router.get("/configuration", getConfiguration);
+router.get("/:id/configuration", validate(idParamSchema), getConfigurationByTemplate);
 router.get("/configuration/export", exportTemplateConfiguration);
 router.post("/configuration/import", validate(importConfigurationSchema), importTemplateConfiguration);
 router.post("/save", validate(saveConfigurationSchema), saveTemplateConfiguration);

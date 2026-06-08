@@ -1,8 +1,8 @@
 {
-  "templateId": "theme-invoice-modern",
+  "templateId": "template-cancelledInvoice-stamp",
   "isDefault": true,
-  "primaryColor": "#2563eb",
-  "secondaryColor": "#14b8a6",
+  "primaryColor": "#7f1d1d",
+  "secondaryColor": "#dc2626",
   "headerFont": "Roboto",
   "bodyFont": "Arial",
   "footerFont": "Open Sans",
@@ -12,6 +12,6 @@
   "headerBold": true,
   "bodyBold": false,
   "footerBold": false,
-  "alignment": "left",
+  "alignment": "center",
   "logo": ""
 }
